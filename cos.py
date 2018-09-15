@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
-# Colorado Springs Airport flight Status
+# Colorado Springs Airport Flight Status, --Harold Wilson, Sept. 2018 
 
-import sys, os, time
+import sys
 
 try:
   import requests
@@ -12,7 +12,6 @@ except Exception as e:
    sys.exit(1)
 
 URL = "https://www.infax.com/webfids/cos/fids-cos.json"
-
 
 try:
    r = requests.get(URL)
@@ -36,8 +35,6 @@ def display_flights(flight_data, direction):
                                                           flight['gate']      ,
                                                           flight['rem']       )
    print "--------------------------------------------------------------------"
- 
-
 
 if  r.status_code == requests.codes.ok:
 
@@ -47,14 +44,11 @@ if  r.status_code == requests.codes.ok:
    print ""
    display_flights(json_flight_data, "Departing")
 
-
 else:
 
    sys.stderr.write("ERROR -- Unable to retrieve data from '%s'.\n" %URL)
    sys.stderr.write("         Response: %d.\n" %r.status_code)
    sys.exit(3)
-
-
 
 sys.exit(0)
 
