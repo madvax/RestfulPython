@@ -24,17 +24,17 @@ def display_flights(flight_data, direction):
    flight_type = direction[0].upper()
    print "*** %s ***" % direction
    print "       CITY      |      Flight      | Time  | Gate |  Ramarks"
-   print "-----------------+------------------+-------+------+---------------"
+   print "-----------------+------------------+-------+------+--------------"
    for flight in flight_data['flights']['flight']:
       if flight['type'] == flight_type:
-         print "%-16s | %-10s %-5s | %s:%s | %-4s |  %s" %(flight['city']     ,
-                                                          flight['an']        ,
-                                                          flight['flt']       ,
-                                                          flight['sked'][0:2] ,
-                                                          flight['sked'][2:4] ,
-                                                          flight['gate']      ,
-                                                          flight['rem']       )
-   print "--------------------------------------------------------------------"
+         print "%-16s | %-10s %-5s | %s:%s | %-4s | %s" %(flight['city']     ,
+                                                          flight['an']       ,
+                                                          flight['flt']      ,
+                                                          flight['sked'][0:2],
+                                                          flight['sked'][2:4],
+                                                          flight['gate']     ,
+                                                          flight['rem']      )
+   print "-------------------------------------------------------------------"
 
 if  r.status_code == requests.codes.ok:
 
