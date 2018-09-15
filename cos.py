@@ -7,7 +7,7 @@ import sys
 try:
   import requests
 except Exception as e:
-   sys.stderr.write("ERROR -- Unablle to import the 'requests' site package.\n")
+   sys.stderr.write("ERROR -- Unable to import the 'requests' site package.\n")
    sys.stderr.write("         try: pip install request\n\n")
    sys.exit(1)
 
@@ -16,7 +16,7 @@ URL = "https://www.infax.com/webfids/cos/fids-cos.json"
 try:
    r = requests.get(URL)
 except Exception as e:
-   sys.stderr.write("ERROR -- Unablle to access '%s'.\n" %URL)
+   sys.stderr.write("ERROR -- Unable to access '%s'.\n" %URL)
    sys.stderr.write("         Check your Internet connection..\n")
    sys.exit(2)
 
